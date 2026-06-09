@@ -1,3 +1,4 @@
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +10,20 @@ body {
     background-color: #0f0f11;
     color: #e4e4e7;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+:root {
+    --bg-main: #121212;
+    --bg-card: #1c1c1c;
+    --bg-cta: #0a0a0a;
+    --accent-red: #6f1ae5;
+    --text-primary: #ffffff;
+    --text-secondary: #aaaaaa;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* Navbar Layout */
 .navbar {
     background: #16161a;
     display: flex;
@@ -24,103 +37,12 @@ body {
     width: 100%;
 }
 
-/* --- Hamburger Menu & Responsiveness Styles --- */
-
-/* Hide the hamburger button on desktop viewports by default */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001;
-}
-
-.hamburger .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #ffffff; /* Matches your white text links */
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* --- Mobile Breakpoint Framework (768px and down) --- */
-@media (max-width: 768px) {
-    .navbar {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 25px;
-    }
-
-    .hamburger {
-        display: flex; /* Show the menu lines on mobile screens */
-    }
-
-    /* Transform nav-links container into a mobile dropdown layout drawer */
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #1a1a24; /* Matches your card design color palette */
-        border-top: 1px solid #2d2d3d;
-        flex-direction: column;
-        align-items: center;
-        gap: 0 !important;
-        width: 100%;
-        max-height: 0; /* Hides the drawer by default */
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-    }
-
-    .nav-links a {
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        border-bottom: 1px solid #2d2d3d;
-    }
-
-    /* Class triggered by JavaScript to open the menu drawer */
-    .nav-links.active {
-        max-height: 300px; /* Adjust based on your total link content sizing */
-    }
-
-    /* CSS Animation turning the hamburger into an 'X' close indicator when active */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    /* Make the project cards grid change to 1 column on smaller devices */
-    .grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-}
-.navbar a {
-    text-decoration: none;
-}
-
 .logo {
     font-size: 26px;
     font-weight: 900;
     letter-spacing: 3px;
     color: #ffffff;
+    text-decoration: none;
 }
 
 .logo span {
@@ -145,6 +67,29 @@ body {
     color: #3b82f6; 
 }
 
+/* Desktop Hamburger Hidden */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Content Container Structures */
 .container {
     max-width: 1200px;
     margin: 60px auto;
@@ -153,6 +98,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 60px; 
+    width: 100%;
 }
 
 .content, 
@@ -163,6 +109,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    width: 100%;
 }
 
 .img-content img {
@@ -176,18 +123,15 @@ h1, h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
     color: #ffffff;
-    text-align: left;
 }
 
-h2 span,
-h1 span {
+h2 span, h1 span {
     color: #3b82f6; 
 }
 
 p {
     font-size: 16px;
-    text-align: left;      
-    line-height: 1.7;       
+    line-height: 1.7;      
     color: #94a3b8;
     margin-bottom: 15px;    
 }
@@ -203,7 +147,6 @@ p {
     border: none;
     border-radius: 6px;
     text-decoration: none;
-    cursor: pointer;
     transition: background 0.2s ease;
 }
 
@@ -211,17 +154,7 @@ p {
     background: #2563eb;
 }
 
-:root {
-    --bg-main: #121212;
-    --bg-card: #1c1c1c;
-    --bg-cta: #0a0a0a;
-    --accent-red: #6f1ae5;
-    --text-primary: #ffffff;
-    --text-secondary: #aaaaaa;
-    --font-main: 'Inter', sans-serif;
-}
-
-
+/* Services Layout */
 .padding-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -247,7 +180,6 @@ p {
     font-weight: 800;
     margin-bottom: 48px;
 }
-
 
 .services-grid {
     display: grid;
@@ -283,9 +215,9 @@ p {
 .service-card p {
     color: var(--text-secondary);
     font-size: 14px;
-    line-height: 1.6;
 }
 
+/* CTA Layout Layouts */
 .cta-section {
     background-color: var(--bg-cta);
     padding: 80px 0;
@@ -327,6 +259,7 @@ p {
     background-color: #c4121e;
 }
 
+/* Footer Section Layouts */
 .footer-section {
     background-color: var(--bg-cta);
     padding: 40px 0;
@@ -341,7 +274,7 @@ p {
 
 .logo-placeholder {
     font-size: 28px;
-    color: var(--accent-red);
+    color: #2563eb;
 }
 
 .footer-socials {
@@ -359,46 +292,87 @@ p {
     color: var(--accent-red);
 }
 
-@media (max-width: 992px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+/* --- RESPONSIVE PHONE INTERFACES BREAKPOINTS --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 25px;
+        position: relative;
     }
-    
-    .cta-container {
-        flex-direction: column;
-        text-align: left;
-        align-items: flex-start;
-    }
-    
-    .cta-text h2 {
-        font-size: 34px;
-    }
-}
 
-@media (max-width: 600px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #16161a;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+        border-top: 1px solid #24242b;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #24242b;
+    }
+
+    .nav-links.active {
+        max-height: 300px;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Stack sections into columns on mobile viewports */
+    .container {
+        flex-direction: column !important;
+        gap: 30px;
+        margin: 30px auto;
+    }
+    
+    .about-section {
+        flex-direction: column-reverse !important; /* Forces your photo below descriptions */
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
-    .main-title {
-        font-size: 28px;
-        margin-bottom: 32px;
-    }
 
-    .services-section {
-        padding: 60px 0;
-    }
-
-    .cta-section {
-        padding: 60px 0;
+    .cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .cta-text h2 {
         font-size: 28px;
     }
-    
+
     .footer-container {
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

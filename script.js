@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hamburgerBtn && navLinks) {
         hamburgerBtn.addEventListener('click', () => {
-            // Toggle active classes to open/close menu drawer and morph the lines to an 'X'
+            // Toggles navigation tray visibility states
             hamburgerBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
 
-        // Close menu immediately if a user clicks an inner item link
+        // Close dropdown tray if link inside selection is activated
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburgerBtn.classList.remove('active');
