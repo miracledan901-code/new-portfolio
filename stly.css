@@ -24,6 +24,94 @@ body {
     width: 100%;
 }
 
+/* --- Hamburger Menu & Responsiveness Styles --- */
+
+/* Hide the hamburger button on desktop viewports by default */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff; /* Matches your white text links */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Mobile Breakpoint Framework (768px and down) --- */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+    }
+
+    .hamburger {
+        display: flex; /* Show the menu lines on mobile screens */
+    }
+
+    /* Transform nav-links container into a mobile dropdown layout drawer */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1a1a24; /* Matches your card design color palette */
+        border-top: 1px solid #2d2d3d;
+        flex-direction: column;
+        align-items: center;
+        gap: 0 !important;
+        width: 100%;
+        max-height: 0; /* Hides the drawer by default */
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #2d2d3d;
+    }
+
+    /* Class triggered by JavaScript to open the menu drawer */
+    .nav-links.active {
+        max-height: 300px; /* Adjust based on your total link content sizing */
+    }
+
+    /* CSS Animation turning the hamburger into an 'X' close indicator when active */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    /* Make the project cards grid change to 1 column on smaller devices */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+}
 .navbar a {
     text-decoration: none;
 }

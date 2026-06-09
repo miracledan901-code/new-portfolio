@@ -9,18 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Home | Miracle Dan</title>
     <link rel="stylesheet" href="stly.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="home.html"><div class="logo">Miracle<span>Dan.</span></div></a>
-        <div class="nav-links">
-            <a href="home.html">Home</a>
-            <a href="project.html">Projects</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">Miracle<span>Dan.</span></div>
+    
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
+    <div class="nav-links" id="navLinks">
+        <a href="project.html" class="active">Projects</a>
+        <a href="project.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
     
     <div class="container">
         <div class="content">
