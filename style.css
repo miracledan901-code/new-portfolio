@@ -13,6 +13,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* Navbar Layout */
 .navbar {
     background: #16161a;
@@ -55,6 +56,28 @@ body {
 .nav-links a:hover, 
 .nav-links a.active {
     color: #3b82f6; 
+}
+
+/* Desktop Hamburger Hidden */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hidden elements on desktop viewports */
