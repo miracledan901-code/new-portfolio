@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Miracle Dan</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
      <nav class="navbar">
@@ -28,18 +29,18 @@
     <h2>Get In Touch</h2>
     <p>I am currently open to full-stack development opportunities, technical collaborations, and freelance projects. Whether you have an application idea to bring to life or want to talk about engineering pipelines, drop a message below and let's build something exceptional.</p>
 
-        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully! (Placeholder logic)');">
+        <form action="https://formspree.io/f/xkoayjpo"method="POST" alert('Message sent successfully! (Placeholder logic)');">
             <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" required placeholder="Enter your full name">
+                <input name="Fullname" type="text" id="name" required placeholder="Enter your full name">
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" required placeholder="name@example.com">
+                <input name="Email" type="email" id="email" required placeholder="name@example.com">
             </div>
             <div class="form-group">
                 <label for="message">Message Body</label>
-                <textarea id="message" rows="6" required placeholder="Type your message details here..."></textarea>
+                <textarea name="Message" id="message" rows="6" required placeholder="Type your message details here..."></textarea>
             </div>
             <button type="submit" class="btn-enter" style="margin-top: 0; width: 100%;">Send Secure Message</button>
         </form>
