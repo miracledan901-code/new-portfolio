@@ -13,6 +13,9 @@ body {
     overflow-x: hidden;
 }
 
+.span-color{
+    color: green;
+}
 
 /* Navbar Layout */
 .navbar {
